@@ -14,6 +14,8 @@
     <body>
 
         <a href="/add">Aggiungi ritiri</a>
-
+        @foreach($retires as $retire)
+        <li>{{$retire->material}} alle ore {{$retire->hour}}, il {{$retire->day}}</li>
+        @endforeach
     </body>
 </html>

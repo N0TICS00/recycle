@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('material');
             $table->string('day');
-            $table->string('hour');
+            $table->string('hour'); 
             $table->rememberToken();
             $table->timestamps();
         });

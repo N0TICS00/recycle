@@ -9,6 +9,7 @@
 <body>
     <h1>Aggiungi un ritiro</h1>
     <form action="/add" method="POST">
+    {{csrf_field()}}
         <p>
         <input type="text" name="material" placeholder="Materiale" required>
         </p>
@@ -21,7 +22,8 @@
         <p>
         <button type="submit">Aggiungi</button>
         </p>
-
+    
     </form>
+    <a href="/"><button>Home</button></a>
 </body>
 </html>
