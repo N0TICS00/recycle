@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Aggiungi un ritiro</h1>
-    <form action="/" method="POST">
+    <form action="/add" method="POST">
         <p>
         <input type="text" name="material" placeholder="Materiale" required>
         </p>

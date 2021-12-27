@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HandlingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/add", function() {
-    return view("add");
-});
-Route::post("/add");
+Route::get("/add", [HandlingController::class, "redirectAdd"]);
+Route::post("/add", [HandlingController::class, "addRetire"] );
