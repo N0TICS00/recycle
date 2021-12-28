@@ -14,7 +14,16 @@
         <input type="text" name="material" placeholder="Materiale" required>
         </p>
         <p>
-        <input type="text" name="day" placeholder="Giorno" required>
+        <select name="day">
+            <option value="Lunedì">Lunedì</option>
+            <option value="Martedì">Martedì</option>
+            <option value="Mercoledì">Mercoledì</option>
+            <option value="Giovedì">Giovedì</option>
+            <option value="Venerdì">Venerdì</option>
+            <option value="Sabato">Sabato</option>
+            <option value="Domenica">Domenica</option>
+
+    </select>
         </p>
         <p>
         <input type="text" name="hour" placeholder="Orario" required> 

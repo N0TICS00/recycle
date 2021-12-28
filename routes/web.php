@@ -16,6 +16,6 @@ use App\Http\Controllers\HandlingController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/", [HandlingController::class, "index"]);
 Route::get("/add", [HandlingController::class, "redirectAdd"]);
-Route::post("/add", [HandlingController::class, "addRetire"] );
+Route::get("/all", [HandlingController::class, "all"]);
+Route::post("/add",[HandlingController::class, "addRetire"] );
