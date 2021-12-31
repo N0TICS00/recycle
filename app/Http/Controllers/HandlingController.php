@@ -14,8 +14,8 @@ class HandlingController extends Controller
         $retires = new User();
         $retires->material = request("material");
         $retires->day = request("day");
-        $retires->hour = request("hour");
-        
+        $retires->hour_start = request("hour-start");
+        $retires->hour_end = request("hour-end");
         $retires->save();
         return back();
     }

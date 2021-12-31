@@ -6,15 +6,29 @@
 
         <title>Home</title>
         
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        .button{
+            margin-top: 25%
+        }
+        .btn{
+            margin-top:5px
+        }
+    </style>
        
     </head>
     <body>
 
-        <a href="/add">Aggiungi ritiri</a>
-        <a href="/all">Guarda tutti i ritiri</a>
+        <div class="button">
+        <div class="text-center">
+        <a href="/add"><button class="btn btn-lg btn-dark ">Aggiungi ritiri</button></a>
+        </div>
+        <div class="text-center">
+        <a href="/all"><button class="btn btn-lg btn-dark">Guarda tutti i ritiri</button></a>
+        </div>
+        </div>
       
     </body>
 </html>
