@@ -38,8 +38,12 @@ body{
 
 
             
+            <form action="{{ route('retire.delete', ['id' => $retire->id]) }}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>    
    
 
             @endif
