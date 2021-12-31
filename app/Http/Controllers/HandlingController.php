@@ -19,11 +19,9 @@ class HandlingController extends Controller
         $retires->save();
         return back();
     }
-    public function deleteRetire(\Illuminate\Http\Request $request){
-        $deleteRequest = $request->get("id");
-        die(var_dump($deleteRequest));
-        $retire = User::find($deleteRequest);
-        $retire->delete();
+    public function deleteRetire($id){
+        User::where("id", $id)->delete();
+        return back();
       
     }
     public function all(){

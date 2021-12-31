@@ -19,4 +19,4 @@ Route::get('/', function () {
 Route::get("/add", [HandlingController::class, "redirectAdd"]);
 Route::get("/all", [HandlingController::class, "all"]);
 Route::post("/add",[HandlingController::class, "addRetire"] );
-Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("retire.delete");
+Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("retires.destroy");
