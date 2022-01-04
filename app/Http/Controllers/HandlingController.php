@@ -28,5 +28,7 @@ class HandlingController extends Controller
         $retires = User::all();
         return view("all", compact("retires"));
     }
-    
+    public function addedRetire(){
+        return view("added");
+    }
 }

@@ -12,11 +12,14 @@ use App\Http\Controllers\HandlingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//GET
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/add", [HandlingController::class, "redirectAdd"]);
 Route::get("/all", [HandlingController::class, "all"]);
+//POST
 Route::post("/add",[HandlingController::class, "addRetire"] );
+Route::post("/added", [HandlingController::class , "addedRetire"]);
+//DELETE
 Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("retires.destroy");

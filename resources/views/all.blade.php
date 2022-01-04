@@ -35,99 +35,110 @@ body{
              <h5 class="card-title">Lunedì</h5>
         @foreach($retires as $retire)
             @if($retire->day == "Lunedì")
-
-
-            
             <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
             @method('delete')
             @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
             <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
         </form>    
-   
-
             @endif
         @endforeach
-        
-
             </div>
         </div>
+        
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Martedì</h5>
-            @foreach($retires as $retire)
-                @if($retire->day == "Martedì")
-                 
+             @foreach($retires as $retire)
+            @if($retire->day == "Martedì")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-             
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>    
+            @endif
+        @endforeach
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Mercoledì</h5>
              @foreach($retires as $retire)
-                @if($retire->day == "Mercoledì")
- 
+            @if($retire->day == "Mercoledì")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>
+            @endif
+        @endforeach
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Giovedì</h5>
              @foreach($retires as $retire)
-                @if($retire->day == "Giovedì")
-                 
+            @if($retire->day == "Giovedì")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-             
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>
+            @endif
+        @endforeach
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Venerdì</h5>
              @foreach($retires as $retire)
-                @if($retire->day == "Venerdì")
-                 
+            @if($retire->day == "Venerdì")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-             
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>    
+            @endif
+        @endforeach
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Sabato</h5>
              @foreach($retires as $retire)
-                @if($retire->day == "Sabato")
-                 
+            @if($retire->day == "Sabato")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-             
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>    
+            @endif
+        @endforeach
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Domenica</h5>
              @foreach($retires as $retire)
-                @if($retire->day == "Domenica")
-                 
+            @if($retire->day == "Domenica")
+            <form action="{{ route('retires.destroy', $retire->id)}}" method="POST">
+            @method('delete')
+            @csrf
             <li>{{$retire->material}} alle ore {{$retire->hour_start}}/{{$retire->hour_end}}</li>
-            
-             
-                @endif
-            @endforeach
+            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+        </form>    
+            @endif
+        @endforeach
             </div>
         </div>
         </div>
