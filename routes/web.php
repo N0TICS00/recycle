@@ -16,10 +16,11 @@ use App\Http\Controllers\HandlingController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/add", [HandlingController::class, "redirectAdd"]);
+Route::get("/add", [HandlingController::class, "add"]);
 Route::get("/all", [HandlingController::class, "all"]);
 //POST
 Route::post("/add",[HandlingController::class, "addRetire"] );
-Route::post("/added", [HandlingController::class , "addedRetire"]);
+
+
 //DELETE
-Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("retires.destroy");
+Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("withdrawals.destroy");

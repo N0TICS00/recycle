@@ -19,7 +19,7 @@
 </head>
 <body>
     <h1>Aggiungi un ritiro</h1>
-    <form action="/added" method="POST">
+    <form action="/add" method="POST">
     {{csrf_field()}}
         <p>
         <input type="text" name="material" placeholder="Materiale" required class="form">

@@ -3,32 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Withdrawal;
 class HandlingController extends Controller
 {
-    public function redirectAdd(){
+    public function add(){
         return view("add");
     }
 
-    public function addRetire(){
-        $retires = new User();
-        $retires->material = request("material");
-        $retires->day = request("day");
-        $retires->hour_start = request("hour-start");
-        $retires->hour_end = request("hour-end");
-        $retires->save();
-        return back();
+    public function addRetire(Request $request){
+        $withdrawals = new Withdrawal();
+        $withdrawals->material = request("material");
+        $withdrawals->day = request("day");
+        $withdrawals->hour_start = request("hour-start");
+        $withdrawals->hour_end = request("hour-end");
+        $withdrawals->save();
+        return redirect()->route("/")->with('status' , "Withdrawal added succesfully");
+        
     }
     public function deleteRetire($id){
-        User::where("id", $id)->delete();
+        Withdrawal::where("id", $id)->delete();
         return back();
       
     }
     public function all(){
-        $retires = User::all();
-        return view("all", compact("retires"));
+        $withdrawals = Withdrawal::all();
+        return view("all", compact("withdrawals"));
     }
     public function addedRetire(){
         return view("added");
+    }
+    public function redirect(Request $request){
+        
     }
 }
