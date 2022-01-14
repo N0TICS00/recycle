@@ -18,6 +18,12 @@
     </style>
 </head>
 <body>
+    @if(Session::has('message'))
+
+<p class="alert
+{{ Session::get('alert-class', 'alert-info') }}">{{Session::get('message') }}</p>
+
+@endif
     <h1>Aggiungi un ritiro</h1>
     <form action="/add" method="POST">
     {{csrf_field()}}

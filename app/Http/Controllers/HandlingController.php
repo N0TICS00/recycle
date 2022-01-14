@@ -17,7 +17,7 @@ class HandlingController extends Controller
         $withdrawals->hour_start = request("hour-start");
         $withdrawals->hour_end = request("hour-end");
         $withdrawals->save();
-        return redirect()->route("/")->with('status' , "Withdrawal added succesfully");
+        return back()->with('message', 'Ritiro aggiunto!');
         
     }
     public function deleteRetire($id){

@@ -28,38 +28,22 @@ body{
 
 </style>
 <body >
-  
+    <?php $collection =collect($withdrawals)?>
     <h1>Ritiri in settimana</h1>
         <div class="card-div">
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Lunedì</h5>
-        @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Lunedì")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>    
-            @endif
-        @endforeach
+                <h1>
+                    <?php $collection->groupBy("day")->last();?>
+                </h1>
             </div>
         </div>
         
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Martedì</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Martedì")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>    
-            @endif
-        @endforeach
+             
             </div>
         </div>
 
