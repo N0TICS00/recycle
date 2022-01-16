@@ -10,17 +10,18 @@ class HandlingController extends Controller
         return view("add");
     }
 
-    public function addRetire(Request $request){
+    public function addWithdrawal(Request $request){
         $withdrawals = new Withdrawal();
         $withdrawals->material = request("material");
         $withdrawals->day = request("day");
         $withdrawals->hour_start = request("hour-start");
         $withdrawals->hour_end = request("hour-end");
         $withdrawals->save();
+        set_time_limit(3);
         return back()->with('message', 'Ritiro aggiunto!');
         
     }
-    public function deleteRetire($id){
+    public function deleteWithdrawal($id){
         Withdrawal::where("id", $id)->delete();
         return back();
       
@@ -29,10 +30,5 @@ class HandlingController extends Controller
         $withdrawals = Withdrawal::all();
         return view("all", compact("withdrawals"));
     }
-    public function addedRetire(){
-        return view("added");
-    }
-    public function redirect(Request $request){
-        
-    }
+
 }

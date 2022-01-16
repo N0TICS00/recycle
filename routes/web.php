@@ -19,8 +19,6 @@ Route::get('/', function () {
 Route::get("/add", [HandlingController::class, "add"]);
 Route::get("/all", [HandlingController::class, "all"]);
 //POST
-Route::post("/add",[HandlingController::class, "addRetire"] );
-
-
+Route::post("/add",[HandlingController::class, "addWithdrawal"] );
 //DELETE
-Route::delete("/delete/{id}", [HandlingController::class, "deleteRetire"])->name("withdrawals.destroy");
+Route::delete("/delete/{id}", [HandlingController::class, "deleteWithdrawal"])->name("withdrawals.destroy");

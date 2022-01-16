@@ -28,102 +28,121 @@ body{
 
 </style>
 <body >
-    <?php $collection =collect($withdrawals)?>
+    <?php $collection =collect($withdrawals)->groupBy("day");?>
     <h1>Ritiri in settimana</h1>
         <div class="card-div">
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Lunedì</h5>
-                <h1>
-                    <?php $collection->groupBy("day")->last();?>
-                </h1>
+            
+                   
+                    @if($collection->has("Lunedì"))
+                    @foreach($collection["Lunedì"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
+                
             </div>
         </div>
         
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Martedì</h5>
-             
+             @if($collection->has("Martedì"))
+                    @foreach($collection["Martedì"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Mercoledì</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Mercoledì")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>
-            @endif
-        @endforeach
+             @if($collection->has("Mercoledì"))
+                    @foreach($collection["Mercoledì"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Giovedì</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Giovedì")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>
-            @endif
-        @endforeach
+             @if($collection->has("Giovedì"))
+                    @foreach($collection["Giovedì"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Venerdì</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Venerdì")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>    
-            @endif
-        @endforeach
+             @if($collection->has("Venerdì"))
+                    @foreach($collection["Venerdì"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Sabato</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Sabato")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>    
-            @endif
-        @endforeach
+             @if($collection->has("Sabato"))
+                    @foreach($collection["Sabato"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
          <div class="card-body">
              <h5 class="card-title">Domenica</h5>
-             @foreach($withdrawals as $withdrawal)
-            @if($withdrawal->day == "Domenica")
-            <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
-            @method('delete')
-            @csrf
-            <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
-            <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
-        </form>    
-            @endif
-        @endforeach
+             @if($collection->has("Domenica"))
+                    @foreach($collection["Domenica"] as $withdrawal)
+                    <form action="{{ route('withdrawals.destroy', $withdrawal->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <li>{{$withdrawal->material}} alle ore {{$withdrawal->hour_start}}/{{$withdrawal->hour_end}}</li>
+                    <button type="submit" class="btn btn-sm btn-dark">Elimina</button>
+                    </form>
+                    @endforeach
+                    @endif
             </div>
         </div>
         </div>
