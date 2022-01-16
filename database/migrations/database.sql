@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 02, 2022 alle 11:52
+-- Creato il: Gen 16, 2022 alle 09:48
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -57,7 +57,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2022_01_13_160024_create_withdrawals_table', 1);
 
 -- --------------------------------------------------------
 
@@ -92,10 +93,10 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `users`
+-- Struttura della tabella `withdrawals`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `withdrawals` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `material` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `day` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -138,9 +139,9 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indici per le tabelle `users`
+-- Indici per le tabelle `withdrawals`
 --
-ALTER TABLE `users`
+ALTER TABLE `withdrawals`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -157,7 +158,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT per la tabella `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT per la tabella `personal_access_tokens`
@@ -166,10 +167,10 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `users`
+-- AUTO_INCREMENT per la tabella `withdrawals`
 --
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `withdrawals`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
